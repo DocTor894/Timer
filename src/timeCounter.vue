@@ -1,10 +1,10 @@
 <template>
-        <p>{{ timeText }}</p>
+    <p>{{ timeText }}</p>
 </template>
 
 <script>
 export default {
-    name: 'timeCounter',
+    name: 'TimeCounter',
     props: ['timeCount'],
     data () {
         return {
@@ -61,7 +61,3 @@ export default {
         
 }
 </script>
-
-<style>
-    
-</style>
