@@ -7,7 +7,7 @@
 </template>
 
 <script>
-    import TimeCounter from './TimeCounter.vue'
+    import TimeCounter from './timeCounter.vue'
     import CommentTimer from './CommentTimer.vue'
     import NotificationHolder from './NotificationHolder.vue'
     
