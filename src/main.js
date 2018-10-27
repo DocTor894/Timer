@@ -3,9 +3,9 @@ import App from './App.vue'
 import 'at-ui-style'
 import AtUI from 'at-ui'
 
-Vue.use(AtUI)
+Vue.use(AtUI);
 
 new Vue({
   el: '#app',
   ...App
-})
+});
