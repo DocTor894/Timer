@@ -28,17 +28,17 @@
         },
         methods:{
             addNotif(){
-                if(this.endNotif===6){
-                    this.endNotif=12,
-                    this.items = this.notifItems.slice(0,this.endNotif)
-                }else{
-                    this.endNotif=6,
-                    this.items = this.notifItems.slice(0,this.endNotif)
-                }
+                this.endNotif+=6,
+                this.items = this.notifItems.slice(0,this.endNotif)
             }
         },
-        created: function(){
-            this.items = this.notifItems.slice(0,this.endNotif)
+        watch:{
+            'notifItems':{
+                handler: function () {
+                    this.items = this.notifItems.slice(0,this.endNotif)
+                },
+                immediate: true
+            }
         }
     }    
 </script>
