@@ -25,6 +25,48 @@
                 notifItems:[
                     {
                         isLooked: true,
+                        title: 'Заголовок',
+                        text: 'Пользователь с ником reznikov ответил на ваш комментарий',
+                        category: 'event',
+                        datetime: "2017, 8, 20, 9, 30, 39"
+                    },
+                    {
+                        isLooked: true,
+                        title: '2',
+                        text: 'Пользователь с ником reznikov ответил на ваш комментарий',
+                        category: 'error',
+                        datetime: "2017, 8, 20, 9, 30, 39"
+                    },
+                    {
+                        isLooked: true,
+                        title: '3',
+                        text: 'Пользователь с ником reznikov ответил на ваш комментарий',
+                        category: 'warning',
+                        datetime: "2017, 8, 20, 9, 30, 39"
+                    },
+                    {
+                        isLooked: true,
+                        title: '4',
+                        text: 'Пользователь с ником reznikov ответил на ваш комментарий',
+                        category: 'success',
+                        datetime: "2017, 8, 20, 9, 30, 39"
+                    },
+                    {
+                        isLooked: true,
+                        title: '5',
+                        text: 'Пользователь с ником reznikov ответил на ваш комментарий',
+                        category: 'event',
+                        datetime: "2017, 8, 20, 9, 30, 39"
+                    },
+                    {
+                        isLooked: true,
+                        title: '6',
+                        text: 'Пользователь с ником reznikov ответил на ваш комментарий',
+                        category: 'event',
+                        datetime: "2017, 8, 20, 9, 30, 39"
+                    },
+                    {
+                        isLooked: true,
                         title: '1',
                         text: 'Пользователь с ником reznikov ответил на ваш комментарий',
                         category: 'event',
@@ -61,62 +103,6 @@
                     {
                         isLooked: true,
                         title: '6',
-                        text: 'Пользователь с ником reznikov ответил на ваш комментарий',
-                        category: 'event',
-                        datetime: "2017, 8, 20, 9, 30, 39"
-                    },
-                    {
-                        isLooked: true,
-                        title: '7',
-                        text: 'Пользователь с ником reznikov ответил на ваш комментарий',
-                        category: 'event',
-                        datetime: "2017, 8, 20, 9, 30, 39"
-                    },
-                    {
-                        isLooked: true,
-                        title: '8',
-                        text: 'Пользователь с ником reznikov ответил на ваш комментарий',
-                        category: 'event',
-                        datetime: "2017, 8, 20, 9, 30, 39"
-                    },
-                    {
-                        isLooked: true,
-                        title: '6',
-                        text: 'Пользователь с ником reznikov ответил на ваш комментарий',
-                        category: 'event',
-                        datetime: "2017, 8, 20, 9, 30, 39"
-                    },
-                    {
-                        isLooked: true,
-                        title: '7',
-                        text: 'Пользователь с ником reznikov ответил на ваш комментарий',
-                        category: 'event',
-                        datetime: "2017, 8, 20, 9, 30, 39"
-                    },
-                    {
-                        isLooked: true,
-                        title: '8',
-                        text: 'Пользователь с ником reznikov ответил на ваш комментарий',
-                        category: 'event',
-                        datetime: "2017, 8, 20, 9, 30, 39"
-                    },
-                    {
-                        isLooked: true,
-                        title: '6',
-                        text: 'Пользователь с ником reznikov ответил на ваш комментарий',
-                        category: 'event',
-                        datetime: "2017, 8, 20, 9, 30, 39"
-                    },
-                    {
-                        isLooked: true,
-                        title: '7',
-                        text: 'Пользователь с ником reznikov ответил на ваш комментарий',
-                        category: 'event',
-                        datetime: "2017, 8, 20, 9, 30, 39"
-                    },
-                    {
-                        isLooked: true,
-                        title: '8',
                         text: 'Пользователь с ником reznikov ответил на ваш комментарий',
                         category: 'event',
                         datetime: "2017, 8, 20, 9, 30, 39"
