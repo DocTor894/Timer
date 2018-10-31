@@ -4,7 +4,13 @@
         <transition name="holder">
             <div class="notifBlock" v-if="show">
                 <ul>
-                    <Notification v-for="item in items" :item="item" :key="item"></Notification>
+                    <Notification
+                      v-for="(item, index) in items"
+                      :item="item"
+                      :index="index"
+                      :key="item"
+                      @deleteItem="deleteItem"
+                    ></Notification>
                 </ul>
                 <input type="submit" value="Показать еще" @click="addNotif"></input>
             </div>
@@ -29,10 +35,13 @@
             Notification
         },
         methods:{
-            addNotif(){
-                this.endNotif+=6,
-                this.items = this.notifItems.slice(0,this.endNotif)
-            }
+          addNotif(){
+              this.endNotif+=6,
+              this.items = this.notifItems.slice(0,this.endNotif)
+          },
+          deleteItem(index){
+            this.items = this.notifItems.splice(index, 1)
+          }
         },
         watch:{
             'notifItems':{
@@ -46,12 +55,12 @@
 </script>
 
 <style scoped lang="less">
-    @back: rgba(10,11,19,.7);
-    @white: #fff;
+    @colorNotifHolderBack: rgba(10,11,19,.7);
+    @colorWhite: #fff;
 
     .notifBlock{
       width: 500px;
-      background: @back;
+      background: @colorNotifHolderBack;
 
       ul{
         padding: 5px;
@@ -63,8 +72,8 @@
         font-size: 16px;
         width: 100%;
         height: 40px;
-        background: @back;
-        color: @white;
+        background: @colorNotifHolderBack;
+        color: @colorWhite;
         border-style: none;
         border-top: 1px solid #000;
       }

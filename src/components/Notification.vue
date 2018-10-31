@@ -3,46 +3,35 @@
     <p class="time">{{item.datetime}}</p>
     <h3>{{item.title}}</h3>
     <p class="description">{{item.text}}</p>
-    <img class="trash" src="../assets/trash.svg" alt="">
+    <i class="material-icons" @click="deleteNotif(index)">delete</i>
   </li>
 </template>
 
 <script>
     export default {
-        props:['item'],
-        name: 'notification',
-        data () {
-            return {                
-            }
+      props:['item', 'index'],
+      name: 'notification',
+      data () {
+        return {
         }
+      },
+      methods:{
+        deleteNotif(index){
+          this.$emit("deleteItem",index)
+        }
+      }
     }    
 </script>
 
 <style scoped lang="less">
-  @error: #C53A3A;
-  @success: #79BD8F;
-  @warning : #F6EA58;
-  @event: #111524;
-  @white: #fff;
-
-  .error{
-    background: @error;
-  }
-
-  .success{
-    background: @success;
-  }
-
-  .warning{
-    background: @warning;
-  }
-
-  .event{
-    background: @event;
-  }
+  @colorError: #C53A3A;
+  @colorSuccess: #79BD8F;
+  @colorWarning : #F6EA58;
+  @colorEvent: #111524;
+  @colorWhite: #fff;
 
   li{
-    color: @white;
+    color: @colorWhite;
     list-style-type: none;
     padding: 10px;
     margin-bottom: 5px;
@@ -63,8 +52,24 @@
       }
     }
 
-    img.trash{
+    &.error{
+      background: @colorError;
+    }
 
+    &.success{
+      background: @colorSuccess;
+    }
+
+    &.warning{
+      background: @colorWarning;
+    }
+
+    &.event{
+      background: @colorEvent;
+    }
+
+    i{
+      cursor: pointer;
     }
   }
 </style>
