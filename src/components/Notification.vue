@@ -1,5 +1,5 @@
 <template>
-  <li v-if="item.isLooked" :class="item.category">
+  <li v-if="item.isLooked" :class="item.category" class="item">
     <p class="time">{{item.datetime}}</p>
     <h3>{{item.title}}</h3>
     <p class="description">{{item.text}}</p>
@@ -31,11 +31,13 @@
   @colorWhite: #fff;
 
   li{
-    position: relative;
-    color: @colorWhite;
-    list-style-type: none;
-    padding: 10px;
-    margin-bottom: 5px;
+    &.item{
+      position: relative;
+      color: @colorWhite;
+      list-style-type: none;
+      padding: 10px;
+      margin-bottom: 5px;
+    }
 
     &:last-child{
       margin-bottom: 0;

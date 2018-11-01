@@ -8,14 +8,11 @@
           :index="index"
           @deleteItem="deleteItem"
         ></Notification>
-        <li>
-          <input
+        <li v-if="inputVisible"
             class="showMore"
             type="submit"
-            value="Показать еще"
             @click="addNotif"
-            v-if="inputVisible"
-          >
+            >Показать еще
         </li>
       </ul>
     </div>
@@ -82,18 +79,21 @@
         overflow-y: scroll;
         max-height: 445px;
       }
-    }
 
-    input{
-      &.showMore{
-        cursor: pointer;
-        font-size: 16px;
-        width: 100%;
-        height: 40px;
-        background: @colorNotifHolderBack;
-        color: @colorWhite;
-        border-style: none;
-        border-top: 1px solid #000;
+      li{
+        &.showMore{
+          line-height: 36px;
+          list-style: none;
+          text-align: center;
+          cursor: pointer;
+          font-size: 16px;
+          width: 100%;
+          height: 40px;
+          background: @colorNotifHolderBack;
+          color: @colorWhite;
+          border-style: none;
+          border-top: 1px solid #000;
+        }
       }
     }
   }

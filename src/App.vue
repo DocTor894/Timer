@@ -21,7 +21,7 @@
     },
     data () {
       return {
-        show: false,
+        show: true,
         timeCount:"2017, 8, 20, 9, 30, 39",
         timeComment:"2017, 8, 20, 9, 30, 39",
         notifItems:[
