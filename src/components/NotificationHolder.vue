@@ -3,16 +3,15 @@
         <button @click="show = !show">Nitifications</button>
         <transition name="holder">
             <div class="notifBlock" v-if="show">
-                <ul>
+                <ul class="scroll">
                     <Notification
                       v-for="(item, index) in items"
                       :item="item"
                       :index="index"
-                      :key="item"
                       @deleteItem="deleteItem"
                     ></Notification>
                 </ul>
-                <input type="submit" value="Показать еще" @click="addNotif"></input>
+                <input type="submit" value="Показать еще" @click="addNotif" v-if="notifItems.length>6">
             </div>
         </transition>
     </div>
@@ -65,6 +64,11 @@
       ul{
         padding: 5px;
         margin: 0;
+
+        &.scroll{
+          overflow-y: scroll;
+          height: 445px;
+        }
       }
 
       input{
