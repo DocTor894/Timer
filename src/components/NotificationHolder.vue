@@ -71,29 +71,24 @@
     width: 500px;
     background: @colorNotifHolderBack;
 
-    ul{
+    ul.scroll{
+      overflow-y: scroll;
+      max-height: 445px;
       padding: 5px;
       margin: 0;
 
-      &.scroll{
-        overflow-y: scroll;
-        max-height: 445px;
-      }
-
-      li{
-        &.showMore{
-          line-height: 36px;
-          list-style: none;
-          text-align: center;
-          cursor: pointer;
-          font-size: 16px;
-          width: 100%;
-          height: 40px;
-          background: @colorNotifHolderBack;
-          color: @colorWhite;
-          border-style: none;
-          border-top: 1px solid #000;
-        }
+      li.showMore{
+        line-height: 36px;
+        list-style: none;
+        text-align: center;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+        height: 40px;
+        background: @colorNotifHolderBack;
+        color: @colorWhite;
+        border-style: none;
+        border-top: 1px solid #000;
       }
     }
   }

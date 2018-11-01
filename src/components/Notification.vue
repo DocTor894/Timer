@@ -30,23 +30,19 @@
   @colorEvent: #111524;
   @colorWhite: #fff;
 
-  li{
-    &.item{
-      position: relative;
-      color: @colorWhite;
-      list-style-type: none;
-      padding: 10px;
-      margin-bottom: 5px;
-    }
+  li.item{
+    position: relative;
+    color: @colorWhite;
+    list-style-type: none;
+    padding: 10px;
+    margin-bottom: 5px;
 
     &:last-child{
       margin-bottom: 0;
     }
 
-    h3{
-      &.title{
-        margin: 0;
-      }
+    h3.title{
+      margin: 0;
     }
 
     p{
@@ -78,13 +74,11 @@
       background: @colorEvent;
     }
 
-    i{
-      &.material-icons{
-        cursor: pointer;
-        position: absolute;
-        right: 10px;
-        bottom: 10px;
-      }
+    i.material-icons{
+      cursor: pointer;
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
     }
   }
 </style>
