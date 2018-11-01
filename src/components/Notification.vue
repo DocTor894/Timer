@@ -1,7 +1,7 @@
 <template>
   <li v-if="item.isLooked" :class="item.category" class="item">
     <p class="time">{{item.datetime}}</p>
-    <h3>{{item.title}}</h3>
+    <h3 class="title">{{item.title}}</h3>
     <p class="description">{{item.text}}</p>
     <i class="material-icons" @click="deleteNotif(index)">delete</i>
   </li>
@@ -44,15 +44,21 @@
     }
 
     h3{
-      margin: 0;
+      &.title{
+        margin: 0;
+      }
     }
 
     p{
-      margin: 5px 0;
       &.time{
+        margin: 5px 0;
         position: absolute;
         top: 5px;
         right: 10px;
+      }
+
+      &.description{
+        margin: 5px 0;
       }
     }
 
