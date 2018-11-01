@@ -1,5 +1,5 @@
 <template>
-  <li v-if="item.isLooked" :class="item.category" class="item">
+  <li :class="item.category" class="item">
     <p class="time">{{item.datetime}}</p>
     <h3 class="title">{{item.title}}</h3>
     <p class="description">{{item.text}}</p>
@@ -45,17 +45,15 @@
       margin: 0;
     }
 
-    p{
-      &.time{
-        margin: 5px 0;
-        position: absolute;
-        top: 5px;
-        right: 10px;
-      }
+    p.time{
+      margin: 5px 0;
+      position: absolute;
+      top: 5px;
+      right: 10px;
+    }
 
-      &.description{
+    p.description{
         margin: 5px 0;
-      }
     }
 
     &.error{
