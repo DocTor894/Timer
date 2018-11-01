@@ -8,19 +8,19 @@
 </template>
 
 <script>
-    export default {
-      props:['item', 'index'],
-      name: 'notification',
-      data () {
-        return {
-        }
-      },
-      methods:{
-        deleteNotif(index){
-          this.$emit("deleteItem",index)
-        }
+  export default {
+    props:['item', 'index'],
+    name: 'notification',
+    data () {
+      return {
       }
-    }    
+    },
+    methods:{
+      deleteNotif(index){
+        this.$emit("deleteItem",index)
+      }
+    }
+  }
 </script>
 
 <style scoped lang="less">
@@ -48,8 +48,9 @@
     p{
       margin: 5px 0;
       &.time{
-        margin: 0;
-        float: right;
+        position: absolute;
+        top: 5px;
+        right: 10px;
       }
     }
 
@@ -70,10 +71,12 @@
     }
 
     i{
-      cursor: pointer;
-      position: absolute;
-      right: 10px;
-      bottom: 10px;
+      &.material-icons{
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+      }
     }
   }
 </style>
