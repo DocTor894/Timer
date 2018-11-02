@@ -4,6 +4,7 @@
     <CommentTimer :timeComment="timeComment"></CommentTimer>
     <button @click="show = !show">Nitifications</button>
     <NotificationHolder :show="show" :notifItems="notifItems"></NotificationHolder>
+    <CustomCheckbox></CustomCheckbox>
   </div>
 </template>
 
@@ -11,17 +12,19 @@
   import TimeCounter from './components/TimeCounter.vue';
   import CommentTimer from './components/CommentTimer.vue';
   import NotificationHolder from './components/NotificationHolder.vue';
+  import CustomCheckbox from './components/CustomCheckbox';
 
   export default {
     name: 'timer',
     components:{
-        TimeCounter,
-        CommentTimer,
-        NotificationHolder
+      TimeCounter,
+      CommentTimer,
+      NotificationHolder,
+      CustomCheckbox
     },
     data () {
       return {
-        show: true,
+        show: false,
         timeCount:"2017, 8, 20, 9, 30, 39",
         timeComment:"2017, 8, 20, 9, 30, 39",
         notifItems:[
