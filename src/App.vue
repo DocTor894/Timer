@@ -4,7 +4,7 @@
     <CommentTimer :timeComment="timeComment"></CommentTimer>
     <button @click="show = !show">Nitifications</button>
     <NotificationHolder :show="show" :notifItems="notifItems"></NotificationHolder>
-    <CustomCheckbox></CustomCheckbox>
+    <CustomCheckbox :checkResoults="checkResoults"></CustomCheckbox>
   </div>
 </template>
 
@@ -98,7 +98,8 @@
             category: 'event',
             datetime: "2017, 8, 20, 9, 30, 39"
           }
-        ]
+        ],
+        checkResoults:['Hello']
       }
     }
   }

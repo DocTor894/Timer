@@ -13,11 +13,10 @@
 
 <script>
   export default {
-
     name: "CustomCheckbox",
+    props:['checkResoults'],
     data(){
       return{
-        checkResoults:[]
       }
     }
   }
