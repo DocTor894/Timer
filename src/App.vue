@@ -4,7 +4,7 @@
     <CommentTimer :timeComment="timeComment"></CommentTimer>
     <button @click="show = !show">Nitifications</button>
     <NotificationHolder :show="show" :notifItems="notifItems"></NotificationHolder>
-    <CustomCheckbox :checkResoults="checkResoults"></CustomCheckbox>
+    <CustomCheckbox v-model="state"></CustomCheckbox>
   </div>
 </template>
 
@@ -24,6 +24,7 @@
     },
     data () {
       return {
+        state: '',
         show: false,
         timeCount:"2017, 8, 20, 9, 30, 39",
         timeComment:"2017, 8, 20, 9, 30, 39",
@@ -98,8 +99,7 @@
             category: 'event',
             datetime: "2017, 8, 20, 9, 30, 39"
           }
-        ],
-        checkResoults:[]
+        ]
       }
     }
   }

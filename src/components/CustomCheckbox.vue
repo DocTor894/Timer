@@ -1,27 +1,35 @@
 <template>
-    <div class="checkbox">
-      <input
-        type="checkbox"
-        value="Vue"
-        v-model="checkResoults"
-      >
-      <ul>
-        <li v-for="item in checkResoults">{{item}}</li>
-      </ul>
-    </div>
+  <div class="checkbox">
+    <p
+      @click="$emit('change', !state)"
+    >{{state}}</p>
+  </div>
 </template>
 
 <script>
   export default {
     name: "CustomCheckbox",
-    props:['checkResoults'],
     data(){
       return{
       }
+    },
+    model: {
+      prop: 'state',
+      event: 'change'
+    },
+    props: {
+      state: Boolean
     }
   }
 </script>
 
-<style scoped>
-
+<style scoped lang="less">
+  .checkbox{
+    font-size: 21px;
+    width: 60px;
+    height: 30px;
+    color: white;
+    text-align: center;
+    background: #79BD8F;
+  }
 </style>
