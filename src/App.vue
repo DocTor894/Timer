@@ -4,7 +4,7 @@
     <CommentTimer :timeComment="timeComment"></CommentTimer>
     <button @click="show = !show">Nitifications</button>
     <NotificationHolder :show="show" :notifItems="notifItems"></NotificationHolder>
-    <CustomCheckbox v-model="state"></CustomCheckbox>
+    <CustomCheckbox v-model="state" :size="size"></CustomCheckbox>
   </div>
 </template>
 
@@ -24,6 +24,7 @@
     },
     data () {
       return {
+        size: 'big',
         state: '',
         show: false,
         timeCount:"2017, 8, 20, 9, 30, 39",
