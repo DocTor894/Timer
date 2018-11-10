@@ -4,7 +4,14 @@
     <CommentTimer :timeComment="timeComment"></CommentTimer>
     <button @click="show = !show">Nitifications</button>
     <NotificationHolder :show="show" :notifItems="notifItems"></NotificationHolder>
-    <CustomCheckbox v-model="state" :size="size"></CustomCheckbox>
+    <CustomCheckbox v-model="state" :size="sizeCheck"></CustomCheckbox>
+    <CustomButton @clickBtn="clickBtn" :size="sizeBtn">
+      <p>
+        <i class="material-icons">
+        {{iconBtn}}
+        </i>
+      {{textBtn}}</p>
+    </CustomButton>
   </div>
 </template>
 
@@ -13,6 +20,7 @@
   import CommentTimer from './components/CommentTimer.vue';
   import NotificationHolder from './components/NotificationHolder.vue';
   import CustomCheckbox from './components/CustomCheckbox';
+  import CustomButton from './components/CustomButton'
 
   export default {
     name: 'timer',
@@ -20,11 +28,15 @@
       TimeCounter,
       CommentTimer,
       NotificationHolder,
-      CustomCheckbox
+      CustomCheckbox,
+      CustomButton
     },
     data () {
       return {
-        size: 'big',
+        iconBtn: 'done',
+        textBtn: 'DONE',
+        sizeBtn: 'small',
+        sizeCheck: 'big',
         state: '',
         show: false,
         timeCount:"2017, 8, 20, 9, 30, 39",

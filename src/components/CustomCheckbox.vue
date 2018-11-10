@@ -39,19 +39,17 @@
     &.big{
       width: 32px;
       height: 32px;
+
+      & i{
+        font-size: 32px;
+      }
     }
 
     &.small{
       width: 16px;
       height: 16px;
-    }
 
-    i{
-      &.big{
-        font-size: 32px;
-      }
-
-      &.small{
+      & i{
         font-size: 16px;
       }
     }
