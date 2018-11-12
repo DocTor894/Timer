@@ -28,15 +28,24 @@
 </script>
 
 <style scoped lang="less">
+  @green: #79BD8F;
+
   .customBtn{
     p{
       color: #fff;
       height: 24px;
       padding: 3px;
       cursor: pointer;
-      background: #79BD8F;
+      background: @green;
       display: inline-block;
       font-size: 20px;
+      border: 1px solid @green;
+
+      &:hover{
+        border: 1px solid @green;
+        background: white;
+        color: @green;
+      }
 
       i{
         font-size: 16px;
