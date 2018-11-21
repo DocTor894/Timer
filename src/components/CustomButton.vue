@@ -1,5 +1,8 @@
 <template>
   <div class="customBtn" :class="size" @click="clickBtn">
+    <i class="material-icons">
+      {{icon}}
+    </i>
     <slot></slot>
   </div>
 </template>
@@ -17,7 +20,8 @@
     },
     props: {
       state: Boolean,
-      size: ''
+      size: '',
+      icon: ''
     },
     methods:{
       clickBtn(){
@@ -31,46 +35,40 @@
   @green: #79BD8F;
 
   .customBtn{
-    p{
-      color: #fff;
-      height: 24px;
-      padding: 3px;
-      cursor: pointer;
-      background: @green;
-      display: inline-block;
-      font-size: 20px;
+    color: #fff;
+    height: 24px;
+    padding: 3px;
+    cursor: pointer;
+    background: @green;
+    display: inline-block;
+    font-size: 20px;
+    border: 1px solid @green;
+
+    &:hover{
       border: 1px solid @green;
+      background: white;
+      color: @green;
+    }
 
-      &:hover{
-        border: 1px solid @green;
-        background: white;
-        color: @green;
-      }
-
-      i{
-        font-size: 16px;
-      }
+    i{
+      font-size: 16px;
     }
 
     &.small{
-      p{
-        height: 16px;
-        font-size: 15px;
+      height: 16px;
+      font-size: 15px;
 
-        i{
-          font-size: 12px;
-        }
+      i{
+        font-size: 12px;
       }
     }
 
     &.big{
-      p{
-        height: 30px;
-        font-size: 26px;
+      height: 30px;
+      font-size: 26px;
 
-        i{
-          font-size: 18px;
-        }
+      i{
+        font-size: 18px;
       }
     }
   }

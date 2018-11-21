@@ -5,13 +5,7 @@
     <button @click="show = !show">Nitifications</button>
     <NotificationHolder :show="show" :notifItems="notifItems"></NotificationHolder>
     <CustomCheckbox v-model="state" :size="sizeCheck"></CustomCheckbox>
-    <CustomButton @clickBtn="clickBtn" :size="sizeBtn">
-      <p>
-        <i class="material-icons">
-        {{iconBtn}}
-        </i>
-      {{textBtn}}</p>
-    </CustomButton>
+    <CustomButton @clickBtn="clickBtn" :size="sizeBtn" :icon='iconBtn'>Добавить</CustomButton>
   </div>
 </template>
 
@@ -34,8 +28,7 @@
     data () {
       return {
         iconBtn: 'done',
-        textBtn: 'DONE',
-        sizeBtn: 'small',
+        sizeBtn: '',
         sizeCheck: 'big',
         state: '',
         show: false,
