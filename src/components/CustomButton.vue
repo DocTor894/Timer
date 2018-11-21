@@ -3,7 +3,7 @@
     <i class="material-icons">
       {{icon}}
     </i>
-    <slot></slot>
+    <p><slot></slot></p>
   </div>
 </template>
 
@@ -35,16 +35,21 @@
   @green: #79BD8F;
 
   .customBtn{
-    color: #fff;
-    height: 24px;
-    padding: 3px;
+    border: 1px solid @green;
     cursor: pointer;
     background: @green;
-    display: inline-block;
+    height: 24px;
+    color: #fff;
     font-size: 20px;
-    border: 1px solid @green;
+    display: inline-block;
+    padding: 4px;
 
-    &:hover{
+    p{
+      margin: 0;
+      display: inline-block;
+    }
+
+    &:hover {
       border: 1px solid @green;
       background: white;
       color: @green;
@@ -55,9 +60,13 @@
     }
 
     &.small{
-      height: 16px;
-      font-size: 15px;
-
+      height: 26px;
+      padding: 0;
+      p{
+        font-size: 15px;
+        margin: 0;
+        display: inline-block;
+      }
       i{
         font-size: 12px;
       }
@@ -65,8 +74,12 @@
 
     &.big{
       height: 30px;
-      font-size: 26px;
-
+      padding: 4px;
+      p{
+        font-size: 26px;
+        margin: 0;
+        display: inline-block;
+      }
       i{
         font-size: 18px;
       }

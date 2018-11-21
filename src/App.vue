@@ -28,7 +28,7 @@
     data () {
       return {
         iconBtn: 'done',
-        sizeBtn: '',
+        sizeBtn: 'big',
         sizeCheck: 'big',
         state: '',
         show: false,
