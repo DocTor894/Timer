@@ -13,7 +13,7 @@
 
 <script>
   import CustomCheckbox from './CustomCheckbox';
-  
+
   export default {
     name: "Spoiler",
     components:{
@@ -30,37 +30,29 @@
 </script>
 
 <style scoped lang="less">
-  .spoiler__holder {
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    .spoiler__nav{
-      display: -webkit-flex;
-      display: -moz-flex;
-      display: -ms-flex;
-      display: -o-flex;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      
-      transition: 0.5s;
-      transform-origin: right center;
-      transform: scaleX(0) translateX(20%);
-      opacity: 0;
-      
-      .checkbox{
-        margin-right: 20px;
-      }
+    .spoiler__holder {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .spoiler__nav{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            transition: 0.5s;
+            transform-origin: right center;
+            transform: scaleX(0) translateX(20%);
+            opacity: 0;
+
+            .checkbox{
+                margin-right: 20px;
+            }
+        }
+
+        .spoiler__nav__active{
+            transform: scaleX(1) translateX(0%);
+            opacity: 1;
+        }
     }
-    .spoiler__nav__active{
-      transform: scaleX(1) translateX(0%);
-      opacity: 1;
-    }
-    
-  }
 </style>
