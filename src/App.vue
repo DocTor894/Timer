@@ -6,6 +6,7 @@
     <NotificationHolder :show="show" :notifItems="notifItems"></NotificationHolder>
     <CustomCheckbox v-model="state" :size="sizeCheck"></CustomCheckbox>
     <CustomButton @clickBtn="clickBtn" :size="sizeBtn" :icon='iconBtn'>Добавить</CustomButton>
+    <Spoiler></Spoiler>
   </div>
 </template>
 
@@ -14,7 +15,8 @@
   import CommentTimer from './components/CommentTimer.vue';
   import NotificationHolder from './components/NotificationHolder.vue';
   import CustomCheckbox from './components/CustomCheckbox';
-  import CustomButton from './components/CustomButton'
+  import CustomButton from './components/CustomButton';
+  import Spoiler from './components/Spoiler';
 
   export default {
     name: 'timer',
@@ -23,7 +25,8 @@
       CommentTimer,
       NotificationHolder,
       CustomCheckbox,
-      CustomButton
+      CustomButton,
+      Spoiler
     },
     data () {
       return {
