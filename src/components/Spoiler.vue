@@ -1,32 +1,47 @@
 <template>
-  <div class="spoiler__holder">
-    <nav class="spoiler__nav"
-     v-bind:class="{ spoiler__nav__active: isActive }">
-      <CustomCheckbox v-model="state" :size="sizeCheck"></CustomCheckbox>
-      <CustomCheckbox v-model="state" :size="sizeCheck"></CustomCheckbox>
-    </nav>
-    <a href="#" class="spoiler__btn" @click="isActive = !isActive">
-      <span>Open</span>
-    </a>
-  </div>
+    <div class="spoiler__holder">
+        <transition>
+            <nav class="spoiler__nav"
+                 v-if="isActive"
+                 :key="isActive"
+                 v-bind:class="{ spoiler__nav__active: isActive }">
+                <CustomCheckbox v-model="state" :size="sizeCheck"></CustomCheckbox>
+                <CustomCheckbox v-model="state" :size="sizeCheck"></CustomCheckbox>
+            </nav>
+        </transition>
+
+        <div class="spoiler__btn" @click="inverseActive">
+            <i class="material-icons" v-if="!isActive">
+                more_horiz
+            </i>
+            <i class="material-icons" v-if="isActive">
+                close
+            </i>
+        </div>
+    </div>
 </template>
 
 <script>
-  import CustomCheckbox from './CustomCheckbox';
+    import CustomCheckbox from './CustomCheckbox';
 
-  export default {
-    name: "Spoiler",
-    components:{
-      CustomCheckbox,
-    },
-    data(){
-      return{
-        isActive: false,
-        sizeCheck: 'big',
-        state: '',
+    export default {
+        name: "Spoiler",
+        components: {
+            CustomCheckbox,
+        },
+        data () {
+            return {
+                isActive: false,
+                sizeCheck: 'big',
+                state: '',
+            }
+        },
+      methods: {
+          inverseActive: function () {
+              this.isActive = !this.isActive;
+          }
       }
     }
-  }
 </script>
 
 <style scoped lang="less">
