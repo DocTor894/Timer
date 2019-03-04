@@ -1,12 +1,12 @@
 <template>
-    <div class="spoiler__holder">
-        <transition>
+    <div :class="side">
+        <transition :name="side">
             <nav class="spoiler__nav"
                  v-if="isActive"
-                 :key="isActive"
-                 v-bind:class="{ spoiler__nav__active: isActive }">
-                <CustomCheckbox v-model="state" :size="sizeCheck"></CustomCheckbox>
-                <CustomCheckbox v-model="state" :size="sizeCheck"></CustomCheckbox>
+                 :key="isActive">
+                 <SpoilerItem
+                     v-for="spoilerItem in spoilerItems"
+                     :spoilerItem="spoilerItem"></SpoilerItem>
             </nav>
         </transition>
 
@@ -22,52 +22,165 @@
 </template>
 
 <script>
-    import CustomCheckbox from './CustomCheckbox';
+    import SpoilerItem from './SpoilerItem.vue';
 
     export default {
         name: "Spoiler",
         components: {
-            CustomCheckbox,
+            SpoilerItem,
         },
+        props:['side', 'spoilerItems'],
         data () {
-            return {
+            return {                
                 isActive: false,
                 sizeCheck: 'big',
                 state: '',
             }
         },
-      methods: {
+        methods: {
           inverseActive: function () {
               this.isActive = !this.isActive;
           }
-      }
+        }
     }
 </script>
 
 <style scoped lang="less">
-    .spoiler__holder {
+    .left{
         display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 44px;
+
+        .spoiler__nav{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            
+            .spoiler__item{
+                cursor: pointer;
+                border: 3px solid #fff;
+                padding: 10px 20px;
+                margin-right: 20px;
+            }
+        }
+      
+        .spoiler__btn{
+            cursor: pointer;
+        }
+        
+        &-enter-active {
+          transition: all .8s ease;
+        }
+        &-enter, &-leave-to{
+            transition: all .8s ease;
+            transform: translateX(10px);
+            opacity: 0;
+        }
+    }
+    
+    .top{
+        display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
 
         .spoiler__nav{
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-
-            transition: 0.5s;
-            transform-origin: right center;
-            transform: scaleX(0) translateX(20%);
-            opacity: 0;
-
-            .checkbox{
-                margin-right: 20px;
+            
+            .spoiler__item{
+                cursor: pointer;
+                border: 3px solid #fff;
+                padding: 10px 20px;
+                margin-bottom: 20px;
             }
         }
-
-        .spoiler__nav__active{
-            transform: scaleX(1) translateX(0%);
-            opacity: 1;
+      
+        .spoiler__btn{
+            cursor: pointer;
+        }
+        
+        &-enter-active {
+          transition: all .8s ease;
+        }
+        &-enter, &-leave-to{
+            transition: all .8s ease;
+            transform: translateY(10px);
+            opacity: 0;
         }
     }
+    
+    .right{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        height: 44px;
+
+        .spoiler__nav{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+            align-items: center;
+            
+            .spoiler__item{
+                cursor: pointer;
+                border: 3px solid #fff;
+                padding: 10px 20px;
+                margin-left: 20px;
+            }
+        }
+      
+        .spoiler__btn{
+            cursor: pointer;
+        }
+        
+        &-enter-active {
+          transition: all .8s ease;
+        }
+        &-enter, &-leave-to{
+            transition: all .8s ease;
+            transform: translateX(-10px);
+            opacity: 0;
+        }
+    }
+    
+    .bottom{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+
+        .spoiler__nav{
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+            
+            .spoiler__item{
+                cursor: pointer;
+                border: 3px solid #fff;
+                padding: 10px 20px;
+                margin-top: 20px;
+            }
+        }
+      
+        .spoiler__btn{
+            cursor: pointer;
+        }
+        
+        &-enter-active {
+          transition: all .8s ease;
+        }
+        &-enter, &-leave-to{
+            transition: all .8s ease;
+            transform: translateY(-10px);
+            opacity: 0;
+        }
+    }
+    
 </style>

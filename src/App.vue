@@ -6,7 +6,7 @@
     <NotificationHolder :show="show" :notifItems="notifItems"></NotificationHolder>
     <CustomCheckbox v-model="state" :size="sizeCheck"></CustomCheckbox>
     <CustomButton @clickBtn="clickBtn" :size="sizeBtn" :icon='iconBtn'>Добавить</CustomButton>
-    <Spoiler></Spoiler>
+    <Spoiler :side="side" :spoilerItems="spoilerItems"></Spoiler>
   </div>
 </template>
 
@@ -14,9 +14,9 @@
   import TimeCounter from './components/TimeCounter.vue';
   import CommentTimer from './components/CommentTimer.vue';
   import NotificationHolder from './components/NotificationHolder.vue';
-  import CustomCheckbox from './components/CustomCheckbox';
-  import CustomButton from './components/CustomButton';
-  import Spoiler from './components/Spoiler';
+  import CustomCheckbox from './components/CustomCheckbox.vue';
+  import CustomButton from './components/CustomButton.vue';
+  import Spoiler from './components/Spoiler.vue';
 
   export default {
     name: 'timer',
@@ -30,6 +30,15 @@
     },
     data () {
       return {
+        side: 'left',
+        spoilerItems:[
+            {
+                text:'Hello'
+            },
+            {
+                text:'World!'
+            }
+        ],
         iconBtn: 'done',
         sizeBtn: 'big',
         sizeCheck: 'big',
