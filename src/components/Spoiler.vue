@@ -47,16 +47,21 @@
 
 <style scoped lang="less">
     .left{
+        margin: auto;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 44px;
+        width: 40px;
+        position: relative;
 
         .spoiler__nav{
+            right: 100%;
+            position: absolute;
             display: flex;
             flex-direction: row;
             justify-content: center;
-            align-items: center;
+            align-items: center;        
             
             .spoiler__item{
                 cursor: pointer;
@@ -81,16 +86,22 @@
     }
     
     .top{
+        margin: auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        width: 40px;
+        position: relative;
 
         .spoiler__nav{
+            bottom: 100%;
+            position: absolute;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            
             
             .spoiler__item{
                 cursor: pointer;
@@ -115,13 +126,18 @@
     }
     
     .right{
+        margin: auto;
         display: flex;
         flex-direction: row-reverse;
         justify-content: center;
         align-items: center;
         height: 44px;
+        width: 40px;
+        position: relative;
 
         .spoiler__nav{
+            left: 100%;
+            position: absolute;
             display: flex;
             flex-direction: row-reverse;
             justify-content: center;
@@ -150,16 +166,21 @@
     }
     
     .bottom{
+        margin: auto;
         display: flex;
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
+        width: 40px;
+        position: relative;
 
         .spoiler__nav{
             display: flex;
             flex-direction: column-reverse;
             justify-content: center;
             align-items: center;
+            top: 100%;
+            position: absolute;
             
             .spoiler__item{
                 cursor: pointer;
