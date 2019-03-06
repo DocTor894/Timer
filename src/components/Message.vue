@@ -48,7 +48,8 @@
         bottom: 10px;
         left: 10px;
         
-        .message__item{        
+        .message__item{
+            display: flex;
             width: 360px;
             height: 110px;
             background: rgba(31,31,39,.8);            
@@ -56,9 +57,20 @@
             padding: 20px;
             margin-bottom: 10px;
             position: relative;
+            flex-direction: column;
+            justify-content: space-around;
             
             &:last-child{
                 margin-bottom: 0;
+            }
+            
+            .message__name{
+                font-size: 20px;
+                font-weight: 600;
+            }
+            
+            .message__title{
+                font-size: 18px;
             }
 
             .message__close{
