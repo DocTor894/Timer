@@ -5,8 +5,9 @@
     <button @click="show = !show">Nitifications</button>
     <NotificationHolder :show="show" :notifItems="notifItems"></NotificationHolder>
     <CustomCheckbox v-model="state" :size="sizeCheck"></CustomCheckbox>
-    <CustomButton @clickBtn="clickBtn" :size="sizeBtn" :icon='iconBtn'>Добавить</CustomButton>
+    <CustomButton @clickBtn="clickBtn" :size="sizeBtn" :icon="iconBtn">Добавить</CustomButton>
     <Spoiler :side="side" :spoilerItems="spoilerItems"></Spoiler>
+    <Message :message="message"></Message>
   </div>
 </template>
 
@@ -17,6 +18,7 @@
   import CustomCheckbox from './components/CustomCheckbox.vue';
   import CustomButton from './components/CustomButton.vue';
   import Spoiler from './components/Spoiler.vue';
+  import Message from './components/Message.vue';
 
   export default {
     name: 'timer',
@@ -26,10 +28,28 @@
       NotificationHolder,
       CustomCheckbox,
       CustomButton,
-      Spoiler
+      Spoiler,
+      Message,
     },
     data () {
       return {
+        message:[
+            {
+                name:'1. Новое достижение!',
+                title:'Любитель классики',
+                content:'Просмотреть все серии мультсериала 1987 года',
+            },
+            {
+                name:'2. Новое достижение!',
+                title:'Любитель классики',
+                content:'Просмотреть все серии мультсериала 1987 года',
+            },
+            {
+                name:'3. Новое достижение!',
+                title:'Любитель классики',
+                content:'Просмотреть все серии мультсериала 1987 года',
+            }
+        ],
         side: 'left',
         spoilerItems:[
             {
