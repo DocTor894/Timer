@@ -30,12 +30,18 @@
             }
         },
         watch:{
-          'message':{
-            handler: function () {
-              this.items = this.message.slice(0,3)
+            'message':{
+                handler: function () {
+                  this.items = this.message.slice(0,this.message.length)
+                },
+                immediate: true
             },
-            immediate: true
-          }
+            'message__item':{
+                handler: function () {
+                    
+                },
+                immediate: true
+            }
         }
     }
 </script>
@@ -59,6 +65,7 @@
             position: relative;
             flex-direction: column;
             justify-content: space-around;
+            animation: end 5s forwards;
             
             &:last-child{
                 margin-bottom: 0;
@@ -81,5 +88,11 @@
             }
 
         }
+    }
+    
+    @keyframes end {
+        0%{opacity: 100}
+        60%{opacity: 100}
+        100%{opacity: 0; display: none}
     }
 </style>

@@ -7,6 +7,7 @@
     <CustomCheckbox v-model="state" :size="sizeCheck"></CustomCheckbox>
     <CustomButton @clickBtn="clickBtn" :size="sizeBtn" :icon="iconBtn">Добавить</CustomButton>
     <Spoiler :side="side" :spoilerItems="spoilerItems"></Spoiler>
+    <button @click="addItem">Add message</button>
     <Message :message="message"></Message>
   </div>
 </template>
@@ -33,23 +34,7 @@
     },
     data () {
       return {
-        message:[
-            {
-                name:'1. Новое достижение!',
-                title:'Любитель классики',
-                content:'Просмотреть все серии мультсериала 1987 года',
-            },
-            {
-                name:'2. Новое достижение!',
-                title:'Любитель классики',
-                content:'Просмотреть все серии мультсериала 1987 года',
-            },
-            {
-                name:'3. Новое достижение!',
-                title:'Любитель классики',
-                content:'Просмотреть все серии мультсериала 1987 года',
-            }
-        ],
+        message:[],
         side: 'left',
         spoilerItems:[
             {
@@ -139,6 +124,15 @@
           }
         ]
       }
+    },
+    methods:{
+        addItem(){
+            this.message.push({
+                    name:'Новое достижение!',
+                    title:'Любитель классики',
+                    content:'Просмотреть все серии мультсериала 1987 года',
+            });
+        }
     }
   }
 </script>
