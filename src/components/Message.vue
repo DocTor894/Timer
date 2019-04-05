@@ -21,7 +21,7 @@
         props:['message'],
         data () {
             return {                
-                items:'',
+                items:''
             }
         },
         methods:{
@@ -33,12 +33,6 @@
             'message':{
                 handler: function () {
                   this.items = this.message.slice(0,this.message.length)
-                },
-                immediate: true
-            },
-            'message__item':{
-                handler: function () {
-                    
                 },
                 immediate: true
             }
@@ -65,7 +59,7 @@
             position: relative;
             flex-direction: column;
             justify-content: space-around;
-            animation: end 5s forwards;
+            animation: messageEnter 1s forwards;
             
             &:last-child{
                 margin-bottom: 0;
@@ -90,9 +84,16 @@
         }
     }
     
-    @keyframes end {
-        0%{opacity: 100}
-        60%{opacity: 100}
-        100%{opacity: 0; display: none}
+/*
+    .message-enter-active{
+        animation: messageEnter 1s;
     }
+*/
+
+    @keyframes messageEnter{
+        0%{left: -40px}
+        100%{left: 0px}
+    }
+    
+    
 </style>

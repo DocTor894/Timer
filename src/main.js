@@ -7,7 +7,7 @@ new Vue({
   ...App
 });
 
-new Vue({
-  el: '#skills__holder',
-  ...Skills
-})
+//new Vue({
+//  el: '#skills__holder',
+//  ...Skills
+//})

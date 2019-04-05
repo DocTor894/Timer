@@ -9,7 +9,7 @@
 
 <script>
   export default {
-    name: "CustomCheckbox",
+    name: "CustomButton",
     data(){
       return{
       }
