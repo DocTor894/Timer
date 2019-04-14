@@ -1,17 +1,19 @@
 <template>
-    <div class="components">
-        <!--
-            <TimeCounter :timeCount="timeCount"></TimeCounter>
-            <CommentTimer :timeComment="timeComment"></CommentTimer>
-            <button @click="show = !show">Nitifications</button>
-            <NotificationHolder :show="show" :notifItems="notifItems"></NotificationHolder>
-            <CustomCheckbox v-model="state" :size="sizeCheck"></CustomCheckbox>
-            <CustomButton @clickBtn="clickBtn" :size="sizeBtn" :icon="iconBtn">Добавить</CustomButton>
-            <Spoiler :side="side" :spoilerItems="spoilerItems"></Spoiler>
-        -->
+    <div class="components">        
+<!--
+        <TimeCounter :timeCount="timeCount"></TimeCounter>
+        <CommentTimer :timeComment="timeComment"></CommentTimer>
+        <button @click="show = !show">Nitifications</button>
+        <NotificationHolder :show="show" :notifItems="notifItems"></NotificationHolder>
+        <CustomCheckbox v-model="state" :size="sizeCheck"></CustomCheckbox>
+        <CustomButton @clickBtn="clickBtn" :size="sizeBtn" :icon="iconBtn">Добавить</CustomButton>
+        <Spoiler :side="side" :spoilerItems="spoilerItems"></Spoiler>
+        
         <button @click="addMessage">Add message</button>
         <button @click="addMessage2">Add message2</button>
         <notify-messages :messages="messages" ref="notifyMessages"></notify-messages>
+-->
+        <ProgressBar :maxProgress="maxProgress" :loadProcess="loadProcess"></ProgressBar>
     </div>
 </template>
 
@@ -22,21 +24,25 @@
     //  import CustomCheckbox from './components/CustomCheckbox.vue';
     //  import CustomButton from './components/CustomButton.vue';
     //  import Spoiler from './components/Spoiler.vue';
-    import NotifyMessages from "./components/NotifyMessages";
+    //  import NotifyMessages from "./components/NotifyMessages";
+    import ProgressBar from './components/ProgressBar.vue';
 
     export default {
         name: 'timer',
         components: {
-            NotifyMessages,
-//      TimeCounter,
-//      CommentTimer,
-//      NotificationHolder,
-//      CustomCheckbox,
-//      CustomButton,
-//      Spoiler,
+    //      NotifyMessages,
+    //      TimeCounter,
+    //      CommentTimer,
+    //      NotificationHolder,
+    //      CustomCheckbox,
+    //      CustomButton,
+    //      Spoiler,
+            ProgressBar
         },
         data() {
             return {
+                maxProgress: 10,
+                loadProcess: 6,
                 messages: [],
                 side: 'left',
                 spoilerItems: [
