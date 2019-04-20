@@ -21,33 +21,27 @@
             return{
                 rDisplay:'',
                 rProgressDeg:'',
+                rClip:'',
             } 
         },
         methods:{
-            calculation(){
+            calculation: function(){
                 if(this.step<=50){
-                    let rDisplay='none';
-                    let rProgressDeg='';
-                    return rDisplay;
-                    return rProgressDeg;
+                    this.rDisplay='none';
+                    this.rProgressDeg='';
                 } else {
-                    let rDisplay='';
-                    let rProgressDeg='rotate(' + 180 + 'deg)';
-                    let rClip='rect(auto, auto, auto, auto)';
-                    return rDisplay;
-                    return rProgressDeg;
-                    return rClip;
+                    this.rDisplay='';
+                    this.rProgressDeg='rotate(' + 180 + 'deg)';
+                    this.rClip='rect(auto, auto, auto, auto)';
                 }
             }
         },
         computed:{
             step(){
-                let step = 100/this.maxProgress * this.loadProcess;
-                return step;
+                return 100/this.maxProgress * this.loadProcess;
             },
             progressDeg(){
-                let progressDeg = 'rotate(' + 360/this.maxProgress * this.loadProcess + 'deg)';
-                return progressDeg;
+                return 'rotate(' + 360/this.maxProgress * this.loadProcess + 'deg)';
             }            
         },
         watch: {

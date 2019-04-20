@@ -42,7 +42,7 @@
         data() {
             return {
                 maxProgress: 6,
-                loadProcess: 2,
+                loadProcess: 4,
                 messages: [],
                 side: 'left',
                 spoilerItems: [
