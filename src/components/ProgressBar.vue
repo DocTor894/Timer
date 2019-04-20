@@ -19,25 +19,41 @@
         props:['maxProgress','loadProcess'],
         data(){
             return{
-                rClip: '',
-                rDisplay: '',
-                rProgressDeg: '',
-                step: 100/this.maxProgress * this.loadProcess,
-                progressDeg: 'rotate(' + 360/this.maxProgress * this.loadProcess + 'deg)',
-                rightSide: 'rect(auto, auto, auto, auto)',
+                rDisplay:'',
+                rProgressDeg:'',
             } 
+        },
+        methods:{
+            calculation(){
+                if(this.step<=50){
+                    let rDisplay='none';
+                    let rProgressDeg='';
+                    return rDisplay;
+                    return rProgressDeg;
+                } else {
+                    let rDisplay='';
+                    let rProgressDeg='rotate(' + 180 + 'deg)';
+                    let rClip='rect(auto, auto, auto, auto)';
+                    return rDisplay;
+                    return rProgressDeg;
+                    return rClip;
+                }
+            }
+        },
+        computed:{
+            step(){
+                let step = 100/this.maxProgress * this.loadProcess;
+                return step;
+            },
+            progressDeg(){
+                let progressDeg = 'rotate(' + 360/this.maxProgress * this.loadProcess + 'deg)';
+                return progressDeg;
+            }            
         },
         watch: {
             'loadProcess': {
-                handler: function () {                    
-                   if(this.step<=50){
-                       this.rDisplay='none';
-                       this.rProgressDeg='';
-                   } else {
-                       this.rDisplay='';
-                       this.rProgressDeg='rotate(' + 180 + 'deg)';
-                       this.rClip='rect(auto, auto, auto, auto)'
-                   }
+                handler: function () { 
+                    this.calculation();
                 },
                 immediate: true
             }

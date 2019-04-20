@@ -41,7 +41,7 @@
         },
         data() {
             return {
-                maxProgress: 5,
+                maxProgress: 6,
                 loadProcess: 2,
                 messages: [],
                 side: 'left',
