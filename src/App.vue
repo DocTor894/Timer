@@ -41,8 +41,8 @@
         },
         data() {
             return {
-                maxProgress: 10,
-                loadProcess: 6,
+                maxProgress: 5,
+                loadProcess: 2,
                 messages: [],
                 side: 'left',
                 spoilerItems: [

@@ -1,14 +1,15 @@
 <template>
-    <div class="set-size charts-container">
+    <div class="set-size">
 
       <div class="progress-wrapper progress-45">
-        <div class="progress">
-          <div class="left-side half-circle"></div>
-          <div class="right-side half-circle"></div>
+        <div class="progress" :style="{clip: rClip}">
+          <div class="left-side half-circle"
+               :style="{transform: progressDeg}"></div>
+          <div class="right-side half-circle"
+               :style="{display: rDisplay, transform: rProgressDeg}"></div>
         </div>
-        <div class="shadow"></div>
+        <div class="back-circle"></div>
       </div>
-
     </div>
 </template>
 
@@ -18,13 +19,25 @@
         props:['maxProgress','loadProcess'],
         data(){
             return{
-                
-            }
+                rClip: '',
+                rDisplay: '',
+                rProgressDeg: '',
+                step: 100/this.maxProgress * this.loadProcess,
+                progressDeg: 'rotate(' + 360/this.maxProgress * this.loadProcess + 'deg)',
+                rightSide: 'rect(auto, auto, auto, auto)',
+            } 
         },
         watch: {
             'loadProcess': {
-                handler: function () {
-                    
+                handler: function () {                    
+                   if(this.step<=50){
+                       this.rDisplay='none';
+                       this.rProgressDeg='';
+                   } else {
+                       this.rDisplay='';
+                       this.rProgressDeg='rotate(' + 180 + 'deg)';
+                       this.rClip='rect(auto, auto, auto, auto)'
+                   }
                 },
                 immediate: true
             }
@@ -35,38 +48,8 @@
 <style scoped lang="less">
     // Vars
     @default-size: 1em;
-    @maxVol: 5;
-    @step: 100/@maxVol;
-    @progressVol: 2;
-
-    // Mixins
-    .size(@width, @height) {
-      height: @height;
-      width: @width;
-    }
-
-    .draw-progress(@progress, @color) {
-      .progress {
-        .half-circle {
-          border-color: @color;
-        }
-
-        .left-side {
-          transform: rotate(@progress * 3.6deg);
-        }
-
-        .right-side when(@progress <= 50){
-            display: none;
-        }
-        .right-side when(@progress > 50) {
-            transform: rotate(180deg);
-        }
-      }
-      .progress when(@progress > 50){
-        clip: rect(auto, auto, auto, auto);
-      }
-    }
-
+    @border-color: #1abc9c;
+    
     // Selectors
     *,
     *:before,
@@ -79,7 +62,8 @@
     }
 
     .progress-wrapper {
-      .size(@default-size, @default-size);
+      height: @default-size;
+      width: @default-size;
       float: left;
       margin: 15px;
       position: relative;
@@ -89,15 +73,18 @@
       }
 
       .progress {
-        .size(100%, 100%);
+        height: 100%;
+        width: 100%;
         clip: rect(0, @default-size, @default-size, @default-size / 2);
         left: 0;
         position: absolute;
         top: 0;
 
         .half-circle {
-          .size(100%, 100%);
-          border: (@default-size / 10) solid #3498db;
+          height: 100%;
+          width: 100%;
+          border: (@default-size / 10) solid;
+          border-color: @border-color;    
           border-radius: 50%;
           clip: rect(0, @default-size / 2, @default-size, 0);
           left: 0;
@@ -106,14 +93,11 @@
         }
       }
 
-      .shadow {
-        .size(100%, 100%);
-        border: @default-size / 10 solid #bdc3c7;
+      .back-circle {
+        height: 100%;
+        width: 100%;
+        border: @default-size / 10 solid #bdc3c7; 
         border-radius: 50%;
-      }
-
-      &.progress-45 {
-        .draw-progress(@progressVol*@step, #1abc9c);
       }
     }
 </style>
